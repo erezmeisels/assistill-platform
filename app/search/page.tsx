@@ -1,7 +1,6 @@
 import { Suspense } from "react";
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
 import { SearchSection } from "@/components/sections/search-section";
+import { BackButton } from "@/components/back-button";
 import { cookies } from "next/headers";
 import { LOCALE_COOKIE, DEFAULT_LOCALE, isValidLocale, type LocaleCode } from "@/lib/i18n/locales";
 import { getTranslations } from "@/lib/i18n/translations";
@@ -30,13 +29,7 @@ export default async function SearchPage() {
         }}
       >
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <Link
-            href="/"
-            className="mb-5 inline-flex items-center gap-1.5 text-sm font-medium text-blue-300 transition-colors hover:text-blue-200"
-          >
-            <ArrowLeft className="h-3.5 w-3.5" />
-            {t.nav.findMatch === "Find a Match" ? "Back to home" : t.nav.howItWorks}
-          </Link>
+          <BackButton label={t.search.back} fallbackHref="/" />
 
           <h1 className="font-display text-2xl font-extrabold leading-[1.1] tracking-[-0.02em] text-white sm:text-3xl">
             {t.search.title}

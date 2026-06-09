@@ -40,6 +40,7 @@ export interface Translations {
     badge: string;
     title: string;
     subtitle: string;
+    back: string;
     whatLooking: string;
     specialty: string;
     specialtyHint: string;
@@ -111,6 +112,7 @@ const en: Translations = {
     badge:          "Find your match",
     title:          "Browse professionals",
     subtitle:       "Select a service category, narrow by specialty, then filter by city and language.",
+    back:           "Back",
     whatLooking:    "What are you looking for?",
     specialty:      "Specialty",
     specialtyHint:  "(select area first)",
@@ -182,6 +184,7 @@ const he: Translations = {
     badge:          "מצא את ההתאמה שלך",
     title:          "עיין במקצוענים",
     subtitle:       "בחר קטגוריית שירות, צמצם לפי התמחות, ולאחר מכן סנן לפי עיר ושפה.",
+    back:           "חזור",
     whatLooking:    "מה אתה מחפש?",
     specialty:      "התמחות",
     specialtyHint:  "(בחר תחום קודם)",
@@ -253,6 +256,7 @@ const fr: Translations = {
     badge:          "Trouvez votre match",
     title:          "Parcourir les professionnels",
     subtitle:       "Sélectionnez une catégorie, précisez la spécialité, puis filtrez par ville et langue.",
+    back:           "Retour",
     whatLooking:    "Que recherchez-vous ?",
     specialty:      "Spécialité",
     specialtyHint:  "(sélectionnez d'abord)",
@@ -324,6 +328,7 @@ const es: Translations = {
     badge:          "Encuentre su coincidencia",
     title:          "Explorar profesionales",
     subtitle:       "Seleccione una categoría, elija la especialidad y filtre por ciudad e idioma.",
+    back:           "Volver",
     whatLooking:    "¿Qué está buscando?",
     specialty:      "Especialidad",
     specialtyHint:  "(seleccione área primero)",
@@ -395,6 +400,7 @@ const zh: Translations = {
     badge:          "找到您的匹配",
     title:          "浏览专业人员",
     subtitle:       "选择服务类别，缩小专业范围，然后按城市和语言筛选。",
+    back:           "返回",
     whatLooking:    "您在寻找什么？",
     specialty:      "专业",
     specialtyHint:  "(请先选择领域)",

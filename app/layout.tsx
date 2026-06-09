@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from "next";
 import { Geist, Plus_Jakarta_Sans } from "next/font/google";
+import Image from "next/image";
 import { cookies } from "next/headers";
 import "./globals.css";
 import { Providers } from "@/components/providers";
@@ -21,6 +22,10 @@ export const metadata: Metadata = {
   title: "AssistILL — Your Trusted Partner in Israel",
   description:
     "AssistILL is a premium marketplace connecting clients with top-tier professionals across Israel for business, legal, translation, logistics, and personal assistance.",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/logo-icon.png",
+  },
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
@@ -39,13 +44,15 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <header className="sticky top-0 z-50 border-b border-slate-100 bg-white/90 backdrop-blur-md shadow-sm">
             <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
               {/* Logo */}
-              <a href="/" className="flex items-center gap-2.5 select-none">
-                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0f172a] text-white text-xs font-bold tracking-tight">
-                  AI
-                </span>
-                <span className="text-base font-bold tracking-tight text-[#0f172a]">
-                  Assist<span className="text-blue-600">ILL</span>
-                </span>
+              <a href="/" className="flex items-center select-none">
+                <Image
+                  src="/logo.png"
+                  alt="AssistILL"
+                  width={148}
+                  height={40}
+                  priority
+                  className="h-9 w-auto"
+                />
               </a>
 
               {/* Nav links */}
@@ -83,11 +90,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <footer className="border-t border-slate-800 bg-[#0f172a] py-12">
             <div className="mx-auto max-w-6xl px-4 sm:px-6">
               <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
-                <div className="flex items-center gap-2.5">
-                  <span className="flex h-7 w-7 items-center justify-center rounded-md bg-white/10 text-white text-[10px] font-bold">
-                    AI
-                  </span>
-                  <span className="text-sm font-semibold text-white">AssistILL</span>
+                <div className="flex items-center">
+                  <Image
+                    src="/logo-white.png"
+                    alt="AssistILL"
+                    width={120}
+                    height={32}
+                    className="h-8 w-auto opacity-90"
+                  />
                 </div>
                 <p className="text-xs text-slate-400">{t.footer.tagline}</p>
                 <p className="text-xs text-slate-500">

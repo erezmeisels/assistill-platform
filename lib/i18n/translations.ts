@@ -1,6 +1,13 @@
 import type { LocaleCode } from "./locales";
 
 export interface Translations {
+  educationLevels: {
+    ELEMENTARY: string;
+    HIGH_SCHOOL: string;
+    UNIVERSITY: string;
+    ENRICHMENT: string;
+    selectPrompt: string;
+  };
   categoryDescriptions: {
     BUSINESS_PROFESSIONAL: string;
     PERSONAL_SOCIAL: string;
@@ -41,6 +48,8 @@ export interface Translations {
     title: string;
     subtitle: string;
     back: string;
+    selectSpecialty: string;
+    selectTile: string;
     whatLooking: string;
     specialty: string;
     specialtyHint: string;
@@ -70,6 +79,13 @@ export interface Translations {
 }
 
 const en: Translations = {
+  educationLevels: {
+    ELEMENTARY:   "Elementary School",
+    HIGH_SCHOOL:  "High School",
+    UNIVERSITY:   "University / College",
+    ENRICHMENT:   "Enrichment & Extracurriculars",
+    selectPrompt: "Which education level do you need support for?",
+  },
   categoryDescriptions: {
     BUSINESS_PROFESSIONAL: "Your business compass in Israel. Whether you arrive alone or as part of a group, we take care of everything you need — from complex business guidance to a professional safety net at every step, with no surprises.",
     PERSONAL_SOCIAL:       "From now on, you're never alone. This is where real, heartwarming connections begin — from grabbing a beer at the end of the day to having someone who will simply be there for you.",
@@ -113,6 +129,8 @@ const en: Translations = {
     title:          "Browse professionals",
     subtitle:       "Select a service category, narrow by specialty, then filter by city and language.",
     back:           "Back",
+    selectSpecialty: "Select a specialty to find the right professional for your needs.",
+    selectTile:     "Select",
     whatLooking:    "What are you looking for?",
     specialty:      "Specialty",
     specialtyHint:  "(select area first)",
@@ -142,6 +160,13 @@ const en: Translations = {
 };
 
 const he: Translations = {
+  educationLevels: {
+    ELEMENTARY:   "בית ספר יסודי",
+    HIGH_SCHOOL:  "תיכון",
+    UNIVERSITY:   "אוניברסיטה / מכללה",
+    ENRICHMENT:   "העשרה וחוגים",
+    selectPrompt: "באיזה שלב לימודי תרצה עזרה?",
+  },
   categoryDescriptions: {
     BUSINESS_PROFESSIONAL: "המצפן העסקי שלך בישראל. גם אם הגעת לבד או כחלק מקבוצה, נדאג לך לכל מה שצריך – מליווי עסקי מורכב ועד לרשת ביטחון מקצועית שתלווה אותך בכל צעד, ללא הפתעות.",
     PERSONAL_SOCIAL:       "מעכשיו, אתה אף פעם לא לבד. כאן מתחילים ליצור חיבורים אמיתיים ומחממי לב – מחבר לבירה בסוף היום ועד למישהו שפשוט יהיה שם עבורך.",
@@ -185,6 +210,8 @@ const he: Translations = {
     title:          "עיין במקצוענים",
     subtitle:       "בחר קטגוריית שירות, צמצם לפי התמחות, ולאחר מכן סנן לפי עיר ושפה.",
     back:           "חזור",
+    selectSpecialty: "בחר התמחות כדי למצוא את המקצוען המתאים לצרכים שלך.",
+    selectTile:     "בחר",
     whatLooking:    "מה אתה מחפש?",
     specialty:      "התמחות",
     specialtyHint:  "(בחר תחום קודם)",
@@ -214,6 +241,13 @@ const he: Translations = {
 };
 
 const fr: Translations = {
+  educationLevels: {
+    ELEMENTARY:   "École primaire",
+    HIGH_SCHOOL:  "Lycée",
+    UNIVERSITY:   "Université / Grande école",
+    ENRICHMENT:   "Activités périscolaires",
+    selectPrompt: "Pour quel niveau avez-vous besoin d'aide ?",
+  },
   categoryDescriptions: {
     BUSINESS_PROFESSIONAL: "Votre boussole professionnelle en Israël. Que vous arriviez seul ou en groupe, nous nous occupons de tout — de l'accompagnement commercial complexe à un filet de sécurité professionnel à chaque étape, sans surprises.",
     PERSONAL_SOCIAL:       "Désormais, vous n'êtes jamais seul. C'est ici que commencent les vraies connexions — d'une bière en fin de journée à quelqu'un qui sera simplement là pour vous.",
@@ -257,6 +291,8 @@ const fr: Translations = {
     title:          "Parcourir les professionnels",
     subtitle:       "Sélectionnez une catégorie, précisez la spécialité, puis filtrez par ville et langue.",
     back:           "Retour",
+    selectSpecialty: "Sélectionnez une spécialité pour trouver le bon professionnel.",
+    selectTile:     "Choisir",
     whatLooking:    "Que recherchez-vous ?",
     specialty:      "Spécialité",
     specialtyHint:  "(sélectionnez d'abord)",
@@ -286,6 +322,13 @@ const fr: Translations = {
 };
 
 const es: Translations = {
+  educationLevels: {
+    ELEMENTARY:   "Escuela primaria",
+    HIGH_SCHOOL:  "Bachillerato",
+    UNIVERSITY:   "Universidad",
+    ENRICHMENT:   "Actividades extracurriculares",
+    selectPrompt: "¿Para qué nivel educativo necesita apoyo?",
+  },
   categoryDescriptions: {
     BUSINESS_PROFESSIONAL: "Su brújula empresarial en Israel. Ya sea que llegue solo o en grupo, cubrimos todo — desde orientación empresarial compleja hasta una red de seguridad profesional en cada paso, sin sorpresas.",
     PERSONAL_SOCIAL:       "A partir de ahora, nunca estás solo. Aquí comienzan las conexiones reales y entrañables — desde una cerveza al final del día hasta alguien que simplemente esté ahí para ti.",
@@ -329,6 +372,8 @@ const es: Translations = {
     title:          "Explorar profesionales",
     subtitle:       "Seleccione una categoría, elija la especialidad y filtre por ciudad e idioma.",
     back:           "Volver",
+    selectSpecialty: "Seleccione una especialidad para encontrar al profesional adecuado.",
+    selectTile:     "Seleccionar",
     whatLooking:    "¿Qué está buscando?",
     specialty:      "Especialidad",
     specialtyHint:  "(seleccione área primero)",
@@ -358,6 +403,13 @@ const es: Translations = {
 };
 
 const zh: Translations = {
+  educationLevels: {
+    ELEMENTARY:   "小学",
+    HIGH_SCHOOL:  "高中",
+    UNIVERSITY:   "大学 / 学院",
+    ENRICHMENT:   "兴趣班与课外活动",
+    selectPrompt: "您需要哪个学习阶段的支持？",
+  },
   categoryDescriptions: {
     BUSINESS_PROFESSIONAL: "您在以色列的商业指南针。无论您独自出行还是团队前来，我们确保一切就绪——从复杂的商务指导到专业安全网络，在每一步陪伴您，零意外。",
     PERSONAL_SOCIAL:       "从今起，您不再孤单。这里是真实温暖连接的起点——从傍晚小酌一杯，到身边有人简单地陪伴您。",
@@ -401,6 +453,8 @@ const zh: Translations = {
     title:          "浏览专业人员",
     subtitle:       "选择服务类别，缩小专业范围，然后按城市和语言筛选。",
     back:           "返回",
+    selectSpecialty: "请选择一个专业类别以找到合适的专业人士。",
+    selectTile:     "选择",
     whatLooking:    "您在寻找什么？",
     specialty:      "专业",
     specialtyHint:  "(请先选择领域)",

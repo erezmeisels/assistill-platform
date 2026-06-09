@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import {
@@ -184,38 +185,54 @@ function SubCategoryTiles({
   return (
     <div>
       <p className="mb-6 text-sm text-slate-500">{t.search.selectSpecialty}</p>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {catMeta.subCategories.map((sub) => {
           const visual = SUB_CAT_VISUAL[sub.value];
           if (!visual) return null;
-          const { Icon, gradient, iconBg, iconColor, accentText, ring } = visual;
+          const { Icon, image, iconBg, iconColor, accentText, ring } = visual;
           return (
             <button
               key={sub.value}
               onClick={() => onSelect(sub.value)}
               className={cn(
-                "group flex flex-col rounded-2xl border border-slate-100 p-6 text-left",
-                "bg-gradient-to-br", gradient,
-                "transition-all duration-200 hover:scale-[1.02] hover:shadow-md hover:ring-2",
+                "group flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white text-left",
+                "shadow-sm transition-all duration-200 hover:scale-[1.02] hover:shadow-xl hover:ring-2",
                 ring
               )}
             >
-              <div className={cn(
-                "mb-4 flex h-12 w-12 items-center justify-center rounded-xl",
-                iconBg
-              )}>
-                <Icon className={cn("h-6 w-6", iconColor)} />
+              {/* Image */}
+              <div className="relative h-44 w-full overflow-hidden bg-slate-100">
+                <Image
+                  src={image}
+                  alt={sub.label}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                {/* subtle bottom fade */}
+                <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/30 to-transparent" />
+                {/* Icon badge */}
+                <div className={cn(
+                  "absolute bottom-3 start-3 flex h-9 w-9 items-center justify-center rounded-xl shadow",
+                  iconBg
+                )}>
+                  <Icon className={cn("h-4.5 w-4.5", iconColor)} />
+                </div>
               </div>
-              <h3 className="font-semibold leading-snug text-[#0f172a]">{sub.label}</h3>
-              <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-slate-500">
-                {sub.description}
-              </p>
-              <div className={cn(
-                "mt-4 flex items-center gap-1 text-xs font-semibold transition-all group-hover:gap-2",
-                accentText
-              )}>
-                {t.search.selectTile}
-                <ChevronRight className="h-3 w-3" />
+
+              {/* Content */}
+              <div className="flex flex-1 flex-col p-4">
+                <h3 className="font-semibold leading-snug text-[#0f172a]">{sub.label}</h3>
+                <p className="mt-1.5 line-clamp-2 flex-1 text-sm leading-relaxed text-slate-500">
+                  {sub.description}
+                </p>
+                <div className={cn(
+                  "mt-3 flex items-center gap-1 text-xs font-semibold transition-all group-hover:gap-2",
+                  accentText
+                )}>
+                  {t.search.selectTile}
+                  <ChevronRight className="h-3 w-3" />
+                </div>
               </div>
             </button>
           );

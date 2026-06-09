@@ -48,10 +48,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                 <Image
                   src="/logo.png"
                   alt="AssistILL"
-                  width={148}
-                  height={40}
+                  width={200}
+                  height={54}
                   priority
-                  className="h-9 w-auto"
+                  className="h-12 w-auto"
                 />
               </a>
 

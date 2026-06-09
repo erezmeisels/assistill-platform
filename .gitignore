@@ -36,6 +36,11 @@ yarn-error.log*
 # vercel
 .vercel
 
+# local notes / secrets (never commit)
+shonot/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+/app/generated/prisma

@@ -10,6 +10,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  /* Plus Jakarta Sans — used for display headings */
+  --font-display: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +25,19 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ── RTL support ── */
+
+/* Hebrew: fall back to a system font that includes the Hebrew Unicode block */
+html[lang="he"] body {
+  font-family: system-ui, "Segoe UI", Arial, sans-serif;
+}
+
+/* Logical-property helpers already handled by dir="rtl" on <html>.
+   Tailwind's ms-/me-/ps-/pe- utilities automatically flip in RTL. */
+
+/* Flip arrow icons that imply directionality */
+html[dir="rtl"] .flip-rtl {
+  transform: scaleX(-1);
 }

@@ -1,6 +1,7 @@
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  // url is supplied at runtime by the PrismaPg driver adapter (lib/prisma.ts)
+  // and by prisma.config.ts for CLI commands (db push, migrate, etc.)
 }
 
 generator client {
